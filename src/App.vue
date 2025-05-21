@@ -1,28 +1,29 @@
-<template>
-  <div class="app">
-    <header class="header">
-      <div class="container">
-        <div class="logo">
-          <router-link to="/">
-            <h1>BookHaven</h1>
-          </router-link>
-        </div>
-        <nav class="nav">
-          <router-link to="/" class="nav-link">Home</router-link>
-          <router-link to="/books" class="nav-link">Books</router-link>
-          <router-link to="/basket" class="nav-link">
-            <div class="cart-icon">
-              <span class="material-icons">shopping_cart</span>
-              <span v-if="cartItems.length" class="cart-count">{{ cartItems.length }}</span>
+    <template>
+      <div class="app">
+        <header class="header">
+          <div class="container">
+            <div class="logo">
+              <router-link to="/">
+                <h1>BookHaven</h1>
+              </router-link>
             </div>
-          </router-link>
-        </nav>
-      </div>
-    </header>
+            <nav class="nav">
+              <router-link to="/" class="nav-link">Home</router-link>
+              <router-link to="/books" class="nav-link">Books</router-link>
+              <router-link to="/basket" class="nav-link">
+                <div class="cart-icon">
+                  <span class="material-icons">shopping_cart</span>
+                  <span v-if="cart.items.length" class="cart-count">{{ cart.items.length }}</span>
+                </div>
+              </router-link>
+            </nav>
+          </div>
+        </header>
+        
 
-    <main>
-      <router-view></router-view>
-    </main>
+        <main>
+          <router-view />
+        </main>
 
     <footer class="footer">
       <div class="container">
@@ -54,70 +55,46 @@
 </template>
 
 <script setup>
-import { ref, provide, computed } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
-import LandingPage from './views/LandingPage.vue';
-import BooksPage from './views/BooksPage.vue';
-import BasketPage from './views/BasketPage.vue';
+ 
 
-// Cart functionality
-const cartItems = ref([]);
+import { ref, provide, computed } from 'vue'
+
+// Cart logic
+const cartItems = ref([])
 
 const addToCart = (book) => {
-  const existingItem = cartItems.value.find(item => item.id === book.id);
-  if (existingItem) {
-    existingItem.quantity += 1;
+  const existing = cartItems.value.find(item => item.id === book.id)
+  if (existing) {
+    existing.quantity += 1
   } else {
-    cartItems.value.push({ ...book, quantity: 1 });
+    cartItems.value.push({ ...book, quantity: 1 })
   }
-};
+}
 
 const removeFromCart = (bookId) => {
-  const index = cartItems.value.findIndex(item => item.id === bookId);
-  if (index !== -1) {
-    cartItems.value.splice(index, 1);
-  }
-};
+  cartItems.value = cartItems.value.filter(item => item.id !== bookId)
+}
 
 const updateQuantity = (bookId, quantity) => {
-  const item = cartItems.value.find(item => item.id === bookId);
-  if (item) {
-    item.quantity = Math.max(1, quantity);
-  }
-};
+  const item = cartItems.value.find(item => item.id === bookId)
+  if (item) item.quantity = Math.max(1, quantity)
+}
 
-const cartTotal = computed(() => {
-  return cartItems.value.reduce((total, item) => {
-    return total + (item.price * item.quantity);
-  }, 0);
-});
+const cartTotal = computed(() =>
+  cartItems.value.reduce((sum, item) => sum + item.price * item.quantity, 0)
+)
 
-// Provide cart functionality to all components
-provide('cart', {
+const cart = {
   items: cartItems,
   addToCart,
   removeFromCart,
   updateQuantity,
   total: cartTotal
-});
+}
 
-// Router setup
-const routes = [
-  { path: '/', component: LandingPage },
-  { path: '/books', component: BooksPage },
-  { path: '/basket', component: BasketPage }
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-});
-
-// Mount router
-router.install = app => {
-  app.use(router);
-};
+provide('cart', cart)
 </script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -292,24 +269,24 @@ main {
   margin-bottom: 20px;
 }
 
-.form-label {
+.form-label { 
   display: block;
   margin-bottom: 5px;
   font-weight: 500;
-}
-
-.form-control {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-family: inherit;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--primary);
-}
+}     
+          
+.form-control {   
+  width: 100%;     
+  padding: 10px;  
+  border: 1px solid var(--border);   
+  border-radius: 4px;      
+  font-family: inherit;       
+}        
+                   
+.form-control:focus {    
+  outline: none;   
+  border-color: var(--primary);   
+}  
 
 /* Router link active state */
 .router-link-active {
@@ -322,3 +299,6 @@ a {
   color: inherit;
 }
 </style>
+
+
+
