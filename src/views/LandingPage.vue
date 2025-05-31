@@ -1,49 +1,49 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
-</script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      
-    </h3>
+  <div class="landing">
+    <h1>Welcome to BookStore</h1>
+    <p>Discover amazing books and build your personal library.</p>
+    <router-link to="/books" class="cta-button">Browse Books</router-link>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'LandingPage'
+}
+</script>
+
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
+.landing {
   text-align: center;
+  padding: 4rem 2rem;
 }
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-heading);
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.cta-button {
+  background-color: hsla(160, 100%, 37%, 1);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: hsla(160, 100%, 30%, 1);
 }
 </style>
-
-
-
-
-
-
-
-
