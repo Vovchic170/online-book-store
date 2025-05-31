@@ -90,11 +90,11 @@
 
 <script>
 import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+import DocumentationIcon from '../views/icons/IconDocumentation.vue'
+import ToolingIcon from '../views/icons/IconTooling.vue'
+import EcosystemIcon from '../views/icons/IconEcosystem.vue'
+import CommunityIcon from '../views/icons/IconCommunity.vue'
+import SupportIcon from '../views/icons/IconSupport.vue'
 
 export default {
   name: 'HelloWorld',

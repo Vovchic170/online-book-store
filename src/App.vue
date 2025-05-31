@@ -1,46 +1,40 @@
+
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/" class="nav-link">Home</router-link>
-      <router-link to="/books" class="nav-link">Books</router-link>
-      <router-link to="/basket" class="nav-link">Basket</router-link>
-    </nav>
-    <main>
-      <router-view />
-    </main>
+    <div>
+      <a href="https://vitejs.dev" target="_blank">
+        <img src="/vite.svg" class="logo" alt="Vite logo" />
+      </a>
+      <a href="https://vuejs.org/" target="_blank">
+        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+      </a>
+    </div>
+    <HelloWorld msg="Vite + Vue" />
   </div>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    HelloWorld
+  }
 }
 </script>
 
-<style>
-@import url('./assets/main.css');
-
-nav {
-  background-color: var(--color-background-soft);
-  padding: 1rem;
-  border-bottom: 1px solid var(--color-border);
-  margin-bottom: 2rem;
+<style scoped>
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
-
-.nav-link {
-  margin-right: 2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 500;
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
-
-.nav-link.router-link-active {
-  background-color: hsla(160, 100%, 37%, 0.2);
-}
-
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
