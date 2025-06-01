@@ -59,3 +59,6 @@ export const useCartStore = defineStore('cart', () => {
     showToast
   }
 }) 
+
+
+

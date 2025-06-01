@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="flex flex-col md:flex-row gap-8">
-      <!-- Filters Sidebar -->
+      <!-- Боковая панель фильтров -->
       <div class="w-full md:w-64 space-y-6">
         <div class="card p-4">
-          <h3 class="text-lg font-semibold mb-4">Filters</h3>
+          <h3 class="text-lg font-semibold mb-4">Фильтры</h3>
           
-          <!-- Price Range -->
+          <!--     Ценовой диапазон -->
           <div class="mb-4">
-            <h4 class="font-medium mb-2">Price Range</h4>
+            <h4 class="font-medium mb-2">Ценовой диапазон</h4>
             <div class="space-y-2">
               <label class="flex items-center">
                 <input 
@@ -17,59 +17,58 @@
                   v-model="filters.priceRanges.under10"
                   @change="applyFilters"
                 >
-                <span class="ml-2">Under $10</span>
+                <span class="ml-2">До $10</span>
               </label>
               <label class="flex items-center">
                 <input 
                   type="checkbox" 
                   class="rounded text-primary-600"
                   v-model="filters.priceRanges.tenTo20"
-                  @change="applyFilters"
-                >
-                <span class="ml-2">$10 - $20</span>
-              </label>
-              <label class="flex items-center">
+                  @change="applyFilters" 
+                >    
+                <span class="ml-2">$10 - $20</span> 
+              </label> 
+              <label class="flex items-center"> 
+                <input  
+                  type="checkbox"  
+                  class="rounded text-primary-600" 
+               v-model="filters.priceRanges.twentyTo30"
+                  @change="applyFilters" > 
+                <span class="ml-2">$20 - $30</span> 
+              </label> 
+              <label class="flex items-center">  
                 <input 
-                  type="checkbox" 
-                  class="rounded text-primary-600"
-                  v-model="filters.priceRanges.twentyTo30"
-                  @change="applyFilters"
-                >
-                <span class="ml-2">$20 - $30</span>
-              </label>
-              <label class="flex items-center">
-                <input 
-                  type="checkbox" 
+                  type="checkbox"    
                   class="rounded text-primary-600"
                   v-model="filters.priceRanges.over30"
                   @change="applyFilters"
                 >
-                <span class="ml-2">Over $30</span>
+                <span class="ml-2">Выше $30</span>
               </label>
             </div>
           </div>
 
-          <!-- Categories -->
-          <div class="mb-4">
-            <h4 class="font-medium mb-2">Categories</h4>
-            <div class="space-y-2">
-              <label class="flex items-center">
-                <input 
+          <!-- Категории --> 
+          <div class="mb-4">   
+            <h4 class="font-medium mb-2">Категории</h4>
+            <div class="space-y-2"> 
+              <label class="flex items-center">  
+                <input     
                   type="checkbox" 
                   class="rounded text-primary-600"
                   v-model="filters.categories.fiction"
                   @change="applyFilters"
                 >
-                <span class="ml-2">Fiction</span>
+                <span class="ml-2">Фантастика</span>
               </label>
               <label class="flex items-center">
                 <input 
                   type="checkbox" 
                   class="rounded text-primary-600"
-                  v-model="filters.categories.nonFiction"
-                  @change="applyFilters"
+                  v-model="filters.categories.nonFiction" 
+                  @change="applyFilters"  
                 >
-                <span class="ml-2">Non-Fiction</span>
+                <span class="ml-2">Нонфикшен</span>
               </label>
               <label class="flex items-center">
                 <input 
@@ -78,7 +77,7 @@
                   v-model="filters.categories.science"
                   @change="applyFilters"
                 >
-                <span class="ml-2">Science</span>
+                <span class="ml-2">Наука</span>
               </label>
               <label class="flex items-center">
                 <input 
@@ -87,29 +86,29 @@
                   v-model="filters.categories.history"
                   @change="applyFilters"
                 >
-                <span class="ml-2">History</span>
+                <span class="ml-2">Исторические</span>
               </label>
             </div>
           </div>
 
-          <!-- Clear Filters -->
+          <!--  Очистить фильтры -->
           <button 
             class="btn btn-secondary w-full mt-4"
             @click="clearFilters"
           >
-            Clear Filters
+            Очистить фильтры
           </button>
         </div>
       </div>
 
-      <!-- Books Grid -->
+      <!-- Сетка из Книг -->
       <div class="flex-1">
-        <!-- Search and Sort -->
+        <!-- Поиск и сортировка -->
         <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
           <div class="w-full sm:w-64">
             <input 
               type="text" 
-              placeholder="Search books..." 
+              placeholder="Поиск книг..." 
               class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
               v-model="searchQuery"
               @input="applyFilters"
@@ -120,14 +119,14 @@
             v-model="sortBy"
             @change="applyFilters"
           >
-            <option value="featured">Sort by: Featured</option>
-            <option value="priceLow">Price: Low to High</option>
-            <option value="priceHigh">Price: High to Low</option>
-            <option value="newest">Newest First</option>
+            <option value="featured"> Рекомендуемые</option>
+            <option value="priceLow">Цена: от низких к высоким</option>
+            <option value="priceHigh">Цена: от высоких к низким</option>
+            <option value="newest">Новые-первыми</option>
           </select>
         </div>
 
-        <!-- Books Grid -->
+        <!-- Сетка из Книг -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="book in filteredBooks" :key="book.id" class="card group">
             <div class="relative aspect-[3/4] overflow-hidden">
@@ -142,111 +141,111 @@
               </router-link>
               <div class="mt-2 flex items-center justify-between">
                 <span class="text-primary-600 font-semibold">${{ book.price }}</span>
-                <button class="btn btn-primary" @click="addToCart(book)">Add to Cart</button>
+                <button class="btn btn-primary" @click="addToCart(book)">Добавить в корзину</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- No Results Message -->
+        <!-- Сообщение об отсутствии результатов -->
         <div v-if="filteredBooks.length === 0" class="text-center py-8">
-          <p class="text-gray-500">No books found matching your criteria.</p>
+          <p class="text-gray-500">Книг, соответствующих вашим критериям, не найдено.</p>
         </div>
 
-        <!-- Pagination -->
+            <!-- Пагинация -->
         <div class="mt-8 flex justify-center">
           <nav class="flex items-center space-x-2">
             <button 
               class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50"
               :disabled="currentPage === 1"
               @click="currentPage--"
-            >Previous</button>
+            >Предыдущие</button> 
+            <button  
+              v-for="page in totalPages"  
+              :key="page" 
+              class="px-3 py-1 rounded-md" 
+              :class="currentPage === page ? 'bg-primary-600 text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-50'" 
+              @click="currentPage = page" 
+            >{{ page }}</button> 
             <button 
-              v-for="page in totalPages" 
-              :key="page"
-              class="px-3 py-1 rounded-md"
-              :class="currentPage === page ? 'bg-primary-600 text-white' : 'border border-gray-300 text-gray-700 hover:bg-gray-50'"
-              @click="currentPage = page"
-            >{{ page }}</button>
-            <button 
-              class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50"
-              :disabled="currentPage === totalPages"
-              @click="currentPage++"
-            >Next</button>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
+              class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50" 
+              :disabled="currentPage === totalPages" 
+              @click="currentPage++" 
+            >Следующие</button> 
+          </nav> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</template> 
+ 
 <script setup>
 import { ref, computed } from 'vue'
 import { useCartStore } from '../stores/cart'
 
 const cartStore = useCartStore()
 
-// In a real application, this would be fetched from an API
+// В реальном приложении это можно было бы получить из API.
 const allBooks = ref([
   {
     id: 1,
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
+    title: 'Великий Гэтсби',
+    author: 'Ф. Скотт Фиджеральд',
     price: 14.99,
-    category: 'fiction',
+    category: 'Фантастика',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 2,
-    title: 'To Kill a Mockingbird',
-    author: 'Harper Lee',
+    title: 'Убить пересмешника',
+    author: 'Харпер Ли',
     price: 12.99,
-    category: 'fiction',
+    category: 'Фантастика',
     cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 3,
     title: 'A Brief History of Time',
-    author: 'Stephen Hawking',
+    author: 'Стивен Хокинг',
     price: 9.99,
-    category: 'science',
+    category: 'Наука',
     cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 4,
-    title: 'Pride and Prejudice',
-    author: 'Jane Austen',
+    title: 'Гордость и предубеждение',
+    author: 'Джейн Остин',
     price: 11.99,
-    category: 'fiction',
+    category: 'Роман',
     cover: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 5,
-    title: 'The Origin of Species',
-    author: 'Charles Darwin',
+    title: 'Происхождение видов',
+    author: 'Чарльз Дарвин',
     price: 15.99,
-    category: 'science',
+    category: 'Наука',
     cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 6,
-    title: 'Sapiens: A Brief History of Humankind',
-    author: 'Yuval Noah Harari',
+    title: 'Sapiens. Краткая история человечества',
+    author: 'Юваль Ной Харари',
     price: 19.99,
-    category: 'history',
+    category: 'Исторические',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 7,
-    title: 'The Art of War',
-    author: 'Sun Tzu',
+    title: 'Искусство войны',
+    author: 'Сунь-цзы',
     price: 8.99,
-    category: 'nonFiction',
+    category: 'Исторические',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 8,
-    title: 'The Alchemist',
+    title: 'Алхимик',
     author: 'Paulo Coelho',
     price: 13.99,
     category: 'fiction',
@@ -286,7 +285,7 @@ const allBooks = ref([
   }
 ])
 
-// Filter state
+// Состояние фильтрации и сортировки
 const filters = ref({
   priceRanges: {
     under10: false,
@@ -307,11 +306,11 @@ const sortBy = ref('featured')
 const currentPage = ref(1)
 const itemsPerPage = 6
 
-// Computed properties for filtered and sorted books
+//  Вычисляемые свойства для отфильтрованных и отсортированных книг
 const filteredBooks = computed(() => {
   let result = [...allBooks.value]
 
-  // Apply search filter
+  // Применить фильтр поиска
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
     result = result.filter(book => 
@@ -320,7 +319,7 @@ const filteredBooks = computed(() => {
     )
   }
 
-  // Apply price range filters
+  // Применить фильтры ценового диапазона
   const activePriceRanges = Object.entries(filters.value.priceRanges)
     .filter(([_, isActive]) => isActive)
     .map(([range]) => range)
@@ -335,7 +334,7 @@ const filteredBooks = computed(() => {
     })
   }
 
-  // Apply category filters
+  //  Применить фильтры категорий
   const activeCategories = Object.entries(filters.value.categories)
     .filter(([_, isActive]) => isActive)
     .map(([category]) => category)
@@ -344,7 +343,7 @@ const filteredBooks = computed(() => {
     result = result.filter(book => activeCategories.includes(book.category))
   }
 
-  // Apply sorting
+  // Применить сортировку
   switch (sortBy.value) {
     case 'priceLow':
       result.sort((a, b) => a.price - b.price)
@@ -353,14 +352,14 @@ const filteredBooks = computed(() => {
       result.sort((a, b) => b.price - a.price)
       break
     case 'newest':
-      // In a real application, we would sort by date
+      // В реальном приложении мы бы сортировали по дате
       break
     default:
-      // Featured - no specific sorting
+      // Избранное - без определенной сортировки
       break
   }
 
-  // Apply pagination
+  //  Применить нумерацию страниц
   const start = (currentPage.value - 1) * itemsPerPage
   return result.slice(start, start + itemsPerPage)
 })
@@ -369,9 +368,9 @@ const totalPages = computed(() => {
   return Math.ceil(allBooks.value.length / itemsPerPage)
 })
 
-// Methods
+// Методы для управления фильтрами и сортировки
 const applyFilters = () => {
-  currentPage.value = 1 // Reset to first page when filters change
+  currentPage.value = 1 // Сброс на первую страницу при изменении фильтров
 }
 
 const clearFilters = () => {
