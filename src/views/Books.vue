@@ -246,41 +246,41 @@ const allBooks = ref([
   {
     id: 8,
     title: 'Алхимик',
-    author: 'Paulo Coelho',
+    author: 'Паоло Коэльо',
     price: 13.99,
-    category: 'fiction',
+    category: 'Роман',
     cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 9,
-    title: 'The Psychology of Money',
-    author: 'Morgan Housel',
+    title: 'Психология денег',
+    author: 'Морган Хаузел',
     price: 16.99,
-    category: 'nonFiction',
+    category: 'Психология',
     cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  },
-  {
-    id: 10,
-    title: 'The Guns of August',
-    author: 'Barbara W. Tuchman',
-    price: 17.99,
-    category: 'history',
+  }, 
+  { 
+    id: 10, 
+    title: 'Августовские пушки', 
+    author: 'Барбара Такман', 
+    price: 17.99, 
+    category: 'Исторические',
     cover: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 11,
-    title: 'The Selfish Gene',
-    author: 'Richard Dawkins',
+    title: 'Эгоистичный Ген',
+    author: 'Ричард Докинз',
     price: 14.99,
-    category: 'science',
+    category: 'Научка',
     cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 12,
-    title: 'The Midnight Library',
-    author: 'Matt Haig',
+    title: 'Полуночная библиотека',
+    author: 'Мэтт Хейг',
     price: 15.99,
-    category: 'fiction',
+    category: 'Роман',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   }
 ])
