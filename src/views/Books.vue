@@ -226,10 +226,10 @@ const allBooks = ref([
     price: 15.99,
     category: 'Наука',
     cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  },
-  {
-    id: 6,
-    title: 'Sapiens. Краткая история человечества',
+  }, 
+  { 
+    id: 6, 
+    title: 'Sapiens: Краткая история человечества',
     author: 'Юваль Ной Харари',
     price: 19.99,
     category: 'Исторические',
@@ -282,30 +282,30 @@ const allBooks = ref([
     price: 15.99,
     category: 'Роман',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  }
-])
-
-// Состояние фильтрации и сортировки
-const filters = ref({
-  priceRanges: {
-    under10: false,
-    tenTo20: false,
-    twentyTo30: false,
-    over30: false
-  },
-  categories: {
-    fiction: false,
-    nonFiction: false,
-    science: false,
-    history: false
-  }
-})
-
-const searchQuery = ref('')
-const sortBy = ref('featured')
-const currentPage = ref(1)
-const itemsPerPage = 6
-
+  }   
+])  
+        
+// Состояние фильтрации и сортировки 
+const filters = ref({ 
+  priceRanges: { 
+    under10: false, 
+    tenTo20: false, 
+    twentyTo30: false,  
+    over30: false 
+  },  
+  categories: { 
+    fiction: false,  
+    nonFiction: false,  
+    science: false,  
+    history: false   
+  }    
+})  
+   
+const searchQuery = ref('')  
+const sortBy = ref('featured')  
+const currentPage = ref(1)  
+const itemsPerPage = 6      
+   
 //  Вычисляемые свойства для отфильтрованных и отсортированных книг
 const filteredBooks = computed(() => {
   let result = [...allBooks.value]
@@ -319,7 +319,7 @@ const filteredBooks = computed(() => {
     )
   }
 
-  // Применить фильтры ценового диапазона
+   // Применить фильтры ценового диапазона
   const activePriceRanges = Object.entries(filters.value.priceRanges)
     .filter(([_, isActive]) => isActive)
     .map(([range]) => range)
@@ -329,11 +329,11 @@ const filteredBooks = computed(() => {
       if (activePriceRanges.includes('under10') && book.price < 10) return true
       if (activePriceRanges.includes('tenTo20') && book.price >= 10 && book.price < 20) return true
       if (activePriceRanges.includes('twentyTo30') && book.price >= 20 && book.price < 30) return true
-      if (activePriceRanges.includes('over30') && book.price >= 30) return true
-      return false
-    })
-  }
-
+      if (activePriceRanges.includes('over30') && book.price >= 30) return true  
+      return false  
+    })     
+  }        
+            
   //  Применить фильтры категорий
   const activeCategories = Object.entries(filters.value.categories)
     .filter(([_, isActive]) => isActive)
@@ -402,3 +402,8 @@ const addToCart = (book) => {
   })
 }
 </script> 
+
+
+
+
+
