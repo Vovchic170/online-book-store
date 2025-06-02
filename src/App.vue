@@ -110,12 +110,12 @@ const updateQuantity = (bookId, quantity) => {
               <li><router-link to="/books" class="text-gray-400 hover:text-white">Каталог</router-link></li>
               <li><router-link to="/categories" class="text-gray-400 hover:text-white">Категории</router-link></li>
               <li><router-link to="/about" class="text-gray-400 hover:text-white">О Нас</router-link></li>
-            </ul>
-          </div>
+            </ul> 
+          </div> 
 
-          <!-- Контакты -->
+          <!-- Контакты --> 
           <div>
-            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <h3 class="text-lg font-semibold mb-4">Контакты</h3>
             <ul class="space-y-2 text-gray-400">
               <li>Email: info@bookshop.com</li>
               <li>Тел.: +7(705) 419-4567</li>
