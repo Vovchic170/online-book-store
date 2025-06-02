@@ -110,15 +110,15 @@
               type="text" 
               placeholder="Поиск книг..." 
               class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500" 
-              v-model="searchQuery" 
-              @input="applyFilters" 
-            > 
-          </div> 
-          <select 
-            class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500" 
-            v-model="sortBy" 
-            @change="applyFilters" 
-          >    
+              v-model="searchQuery"  
+              @input="applyFilters"  
+            >  
+          </div>  
+          <select  
+            class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"  
+            v-model="sortBy"  
+            @change="applyFilters"  
+          >     
             <option value="featured"> Рекомендуемые</option> 
             <option value="priceLow">Цена: от низких к высоким</option> 
             <option value="priceHigh">Цена: от высоких к низким</option> 

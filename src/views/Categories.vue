@@ -1,10 +1,10 @@
-<template>
-  <div>
-    <h1 class="text-3xl font-bold text-gray-900 mb-8">Book Categories</h1>
-    
+<template>                   
+  <div>                      
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Категории Книг</h1>
+       
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <router-link 
-        v-for="category in categories" 
+      <router-link   
+        v-for="category in categories"  
         :key="category.id"
         :to="'/categories/' + category.id"
         class="card p-6 hover:shadow-lg transition-shadow duration-300"
@@ -19,9 +19,9 @@
       </router-link>
     </div>
 
-    <!-- Featured Categories -->
+    <!-- Рекомендуемые категории -->
     <div class="mt-16">
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">Featured Categories</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Рекомендуемые категории</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div v-for="featured in featuredCategories" :key="featured.id" class="card overflow-hidden">
           <div class="relative h-48">
@@ -42,28 +42,28 @@
 import { ref } from 'vue'
 
 const categories = ref([
-  { id: 1, name: 'Fiction', icon: '📚', count: 156 },
-  { id: 2, name: 'Non-Fiction', icon: '📖', count: 98 },
-  { id: 3, name: 'Science', icon: '🔬', count: 45 },
-  { id: 4, name: 'History', icon: '⏳', count: 67 },
-  { id: 5, name: 'Biography', icon: '👤', count: 34 },
-  { id: 6, name: 'Poetry', icon: '✒️', count: 23 },
-  { id: 7, name: 'Business', icon: '💼', count: 89 },
-  { id: 8, name: 'Technology', icon: '💻', count: 56 },
-  { id: 9, name: 'Art & Design', icon: '🎨', count: 42 }
+  { id: 1, name: 'Фантастика', icon: '📚', count: 156 },
+  { id: 2, name: 'Роман', icon: '📖', count: 98 },
+  { id: 3, name: 'Наука', icon: '🔬', count: 45 },
+  { id: 4, name: 'Исторические', icon: '⏳', count: 67 },
+  { id: 5, name: 'Биография', icon: '👤', count: 34 },
+  { id: 6, name: 'Поэзия', icon: '✒️', count: 23 },
+  { id: 7, name: 'Бизнесс', icon: '💼', count: 89 },
+  { id: 8, name: 'Технологии', icon: '💻', count: 56 },
+  { id: 9, name: 'Искусство и дизайн', icon: '🎨', count: 42 }
 ])
 
 const featuredCategories = ref([
   {
     id: 1,
-    name: 'Bestselling Fiction',
-    description: 'Discover our most popular fiction titles',
+    name: 'Бестселлер в жанре художественной литературы',
+    description: 'Откройте для себя наши самые популярные художественные произведения',
     image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 2,
-    name: 'New Releases',
-    description: 'Check out our latest additions',
+    name: 'Новые релизы',
+    description: 'Ознакомьтесь с нашими последними дополнениями',
     image: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   }
 ])
