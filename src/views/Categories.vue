@@ -13,7 +13,7 @@
           <div class="text-4xl">{{ category.icon }}</div>
           <div>
             <h3 class="text-xl font-semibold text-gray-900">{{ category.name }}</h3>
-            <p class="text-gray-600">{{ category.count }} books</p>
+            <p class="text-gray-600">{{ category.count }}книги</p>
           </div>
         </div>
       </router-link>
