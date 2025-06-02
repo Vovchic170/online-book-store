@@ -140,12 +140,12 @@
                 <p class="text-gray-600">{{ book.author }}</p>
               </router-link>пше ыефег
               <div class="mt-2 flex items-center justify-between">
-                <span class="text-primary-600 font-semibold">${{ book.price }}</span>
-                <button class="btn btn-primary" @click="addToCart(book)">Добавить в корзину</button>
-              </div>
-            </div>
-          </div>
-        </div>
+                <span class="text-primary-600 font-semibold">${{ book.price }}</span> 
+                <button class="btn btn-primary" @click="addToCart(book)">Добавить в корзину</button> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
 
         <!-- Сообщение об отсутствии результатов -->
         <div v-if="filteredBooks.length === 0" class="text-center py-8">
