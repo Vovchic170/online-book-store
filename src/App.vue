@@ -98,13 +98,13 @@ const updateQuantity = (bookId, quantity) => {
           <div>
             <h3 class="text-lg font-semibold mb-4">О Нас</h3>
             <p class="text-gray-400">
-              Your trusted source for quality books and exceptional reading experiences.
+              Ваш надежный источник качественных книг и исключительных впечатлений от чтения.
             </p>
           </div>
 
           <!-- Quick Links -->
           <div>
-            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 class="text-lg font-semibold mb-4">Навигация</h3>
             <ul class="space-y-2">
               <li><router-link to="/" class="text-gray-400 hover:text-white">Главная</router-link></li>
               <li><router-link to="/books" class="text-gray-400 hover:text-white">Каталог</router-link></li>
@@ -119,11 +119,11 @@ const updateQuantity = (bookId, quantity) => {
             <ul class="space-y-2 text-gray-400">
               <li>Email: info@bookshop.com</li>
               <li>Тел.: +7(705) 419-4567</li>
-              <li>Адресс: ул. Достык 34, Алмата, Казахстан</li>
-            </ul>
-          </div>
+              <li>Адрес: ул. Достык 34, Алмата, Казахстан</li>
+            </ul> 
+          </div> 
 
-          <!-- Соц сети -->
+          <!-- Соц сети --> 
           <div>
             <h3 class="text-lg font-semibold mb-4">Подписывайся на нас</h3>
             <div class="flex space-x-4">
