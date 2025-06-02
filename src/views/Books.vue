@@ -149,15 +149,15 @@
 
         <!-- Сообщение об отсутствии результатов -->
         <div v-if="filteredBooks.length === 0" class="text-center py-8">
-          <p class="text-gray-500">Книг, соответствующих вашим критериям, не найдено.</p>
-        </div>
-
-            <!-- Пагинация -->
-        <div class="mt-8 flex justify-center">
-          <nav class="flex items-center space-x-2">
-            <button 
-              class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50"
-              :disabled="currentPage === 1"
+          <p class="text-gray-500">Книг, соответствующих вашим критериям, не найдено.</p> 
+        </div> 
+   
+            <!-- Пагинация --> 
+        <div class="mt-8 flex justify-center"> 
+          <nav class="flex items-center space-x-2"> 
+            <button  
+              class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50" 
+              :disabled="currentPage === 1" 
               @click="currentPage--"
             >Предыдущие</button> 
             <button  
