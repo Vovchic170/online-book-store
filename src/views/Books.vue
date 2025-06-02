@@ -205,7 +205,7 @@ const allBooks = ref([
   },
   {
     id: 3,
-    title: 'A Brief History of Time',
+    title: 'Краткая история времени ',
     author: 'Стивен Хокинг',
     price: 9.99,
     category: 'Наука',
