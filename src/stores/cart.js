@@ -21,7 +21,7 @@ export const useCartStore = defineStore('cart', () => {
     } else {
       items.value.push({ ...book })
     }
-    showToastMessage(`${book.title} added to cart`)
+    showToastMessage(`${book.title} добавлено в корзину`)
   }
 
   const removeItem = (bookId) => {

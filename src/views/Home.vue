@@ -1,6 +1,6 @@
 <template> 
   <div> 
-     <!-- Раздел героев --> 
+     <!-- Раздел Hero --> 
     <section class="bg-primary-600 text-white py-16"> 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
         <div class="text-center"> 
@@ -45,7 +45,7 @@
     <!-- Раздел категорий --> 
     <section class="bg-gray-50 py-12"> 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
-        <h2 class="text-3xl font-bold text-gray-900 mb-8">Просмотр по категориям</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Просмотр по категориям</h2> 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <router-link v-for="category in categories" :key="category.id" 
             :to="'/categories/' + category.id"
@@ -70,7 +70,7 @@ const featuredBooks = ref([
     id: 1,
     title: 'Великий Гэтсби', 
     author: 'Ф. Скотт Фицджеральд', 
-    price: 14.99,
+    price: 2500,
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   }, 
   { 
@@ -97,7 +97,7 @@ const featuredBooks = ref([
 ])   
        
 const categories = ref([ 
-  { id: 1, name: 'Научка', icon: '📚' }, 
+  { id: 1, name: 'Фантастика', icon: '📚' }, 
   { id: 2, name: 'Роман', icon: '📖' },  
   { id: 3, name: 'Наука', icon: '🔬' },  
   { id: 4, name: 'Исторические', icon: '⏳' }  

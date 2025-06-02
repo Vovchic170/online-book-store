@@ -23,19 +23,19 @@
           <div class="mt-6 pt-6 border-t"> 
             <div class="flex justify-between items-center mb-2"> 
               <span class="text-gray-600">Итого</span> 
-              <span class="font-medium">${{ cartStore.totalPrice.toFixed(2) }} </span> 
+              <span class="font-medium">{{ cartStore.totalPrice.toFixed(2) }}т </span> 
             </div> 
             <div class="flex justify-between items-center mb-2">  
               <span class="text-gray-600">Доставка</span> 
-              <span class="font-medium">$5.00</span> 
+              <span class="font-medium">5.00т</span> 
             </div>  
             <div class="flex justify-between items-center mb-2"> 
               <span class="text-gray-600">Налог</span>  
-              <span class="font-medium">${{ (cartStore.totalPrice * 0.1).toFixed(2) }}</span>   
+              <span class="font-medium">{{ (cartStore.totalPrice * 0.1).toFixed(2) }}т</span>   
             </div> 
             <div class="flex justify-between items-center text-lg font-bold mt-4 pt-4 border-t"> 
               <span>Всего</span> 
-              <span class="text-primary-600">${{ (cartStore.totalPrice + 5 + cartStore.totalPrice * 0.1).toFixed(2) }}</span>  
+              <span class="text-primary-600">{{ (cartStore.totalPrice + 5 + cartStore.totalPrice * 0.1).toFixed(2) }}т</span>  
             </div> 
           </div> 
         </div> 
@@ -68,7 +68,7 @@
               <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
               <input type="email" placeholder="john@example.com" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500">
             </div>
-            <button type="submit" class="btn btn-primary w-full">Разместить заказ</button>
+            <button type="submit" class="btn btn-primary w-full">Оформить заказ</button>
           </form>
         </div>
       </div>

@@ -138,9 +138,9 @@
               <router-link :to="'/book/' + book.id">
                 <h3 class="text-lg font-semibold text-gray-900">{{ book.title }}</h3>
                 <p class="text-gray-600">{{ book.author }}</p>
-              </router-link>пше ыефег
+              </router-link>
               <div class="mt-2 flex items-center justify-between">
-                <span class="text-primary-600 font-semibold">${{ book.price }}</span> 
+                <span class="text-primary-600 font-semibold">{{ book.price }}т</span> 
                 <button class="btn btn-primary" @click="addToCart(book)">Добавить в корзину</button> 
               </div> 
             </div> 
@@ -272,7 +272,7 @@ const allBooks = ref([
     title: 'Эгоистичный Ген',
     author: 'Ричард Докинз',
     price: 14.99,
-    category: 'Научка',
+    category: 'Наука',
     cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {

@@ -54,7 +54,7 @@ const updateQuantity = (bookId, quantity) => {
                     <div v-for="item in cartStore.items" :key="item.id" class="flex items-center space-x-4 py-2 border-b">
                       <div class="flex-1">
                         <h4 class="text-sm font-medium text-gray-900">{{ item.title }}</h4>
-                        <p class="text-sm text-gray-500">${{ item.price }} x {{ item.quantity }}</p>
+                        <p class="text-sm text-gray-500">{{ item.price }} x {{ item.quantity }}</p>
                       </div>
                       <div class="flex items-center space-x-2">
                         <button @click="updateQuantity(item.id, item.quantity - 1)" class="text-gray-500 hover:text-gray-700">-</button>
@@ -69,10 +69,10 @@ const updateQuantity = (bookId, quantity) => {
                     </div> 
                     <div class="mt-4 pt-4 border-t"> 
                       <div class="flex justify-between items-center"> 
-                        <span class="font-medium">Total:</span>
-                        <span class="font-bold text-primary-600">${{ cartStore.totalPrice.toFixed(2) }}</span> 
+                        <span class="font-medium">Всего:</span>
+                        <span class="font-bold text-primary-600">{{ cartStore.totalPrice.toFixed(2) }}</span> 
                       </div> 
-                      <router-link to="/checkout" class="btn btn-primary w-full mt-4 block text-center">Checkout</router-link> 
+                      <router-link to="/checkout" class="btn btn-primary w-full mt-4 block text-center">Перейти к оплате</router-link> 
                     </div> 
                   </div> 
                 </div> 
@@ -109,7 +109,7 @@ const updateQuantity = (bookId, quantity) => {
               <li><router-link to="/" class="text-gray-400 hover:text-white">Главная</router-link></li>
               <li><router-link to="/books" class="text-gray-400 hover:text-white">Каталог</router-link></li>
               <li><router-link to="/categories" class="text-gray-400 hover:text-white">Категории</router-link></li>
-              <li><router-link to="/about" class="text-gray-400 hover:text-white">О Нас</router-link></li>
+              <li><router-link to="/about" class="text-gray-400 hover:text-white">О Нас</router-link></li> 
             </ul> 
           </div> 
 
@@ -124,7 +124,7 @@ const updateQuantity = (bookId, quantity) => {
           </div> 
 
           <!-- Соц сети --> 
-          <div>
+          <div> 
             <h3 class="text-lg font-semibold mb-4">Подписывайся на нас</h3>
             <div class="flex space-x-4">
               <a href="#" class="text-gray-400 hover:text-white">
@@ -162,7 +162,7 @@ const updateQuantity = (bookId, quantity) => {
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
+} 
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
