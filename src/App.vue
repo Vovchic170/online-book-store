@@ -17,7 +17,7 @@ const updateQuantity = (bookId, quantity) => {
 
 <template>
   <div class="min-h-screen flex flex-col">
-    <!-- Toast Notification -->
+    <!-- Уведомление -->
     <Toast v-if="cartStore.showToast" :message="cartStore.toastMessage" />
     
     <!-- Header -->
@@ -30,25 +30,25 @@ const updateQuantity = (bookId, quantity) => {
             </router-link>
           </div>
           <div class="flex items-center space-x-4">
-            <router-link to="/" class="text-gray-600 hover:text-gray-900">Home</router-link>
-            <router-link to="/books" class="text-gray-600 hover:text-gray-900">Books</router-link>
-            <router-link to="/categories" class="text-gray-600 hover:text-gray-900">Categories</router-link>
-            <!-- Cart Dropdown -->
+            <router-link to="/" class="text-gray-600 hover:text-gray-900">Главная</router-link>
+            <router-link to="/books" class="text-gray-600 hover:text-gray-900">Каталог</router-link>
+            <router-link to="/categories" class="text-gray-600 hover:text-gray-900">Категории</router-link>
+            <!-- Раскрывающийся список корзины -->
             <div class="relative" @click="isCartOpen = !isCartOpen">
               <button class="btn btn-primary">
                 <span class="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                  Cart ({{ cartStore.totalItems }})
+                  Корзина ({{ cartStore.totalItems }})
                 </span>
               </button>
               
-              <!-- Cart Dropdown Menu -->
+              <!-- Выпадающее меню корзины -->
               <div v-if="isCartOpen" class="absolute right-0 mt-2 w-96 bg-white rounded-lg shadow-lg z-50">
                 <div class="p-4">
                   <div v-if="cartStore.items.length === 0" class="text-center py-4">
-                    <p class="text-gray-500">Your cart is empty</p>
+                    <p class="text-gray-500">Ваша корзина пуста</p>
                   </div>
                   <div v-else>
                     <div v-for="item in cartStore.items" :key="item.id" class="flex items-center space-x-4 py-2 border-b">
@@ -63,27 +63,27 @@ const updateQuantity = (bookId, quantity) => {
                         <button @click="cartStore.removeItem(item.id)" class="text-red-500 hover:text-red-700">
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="mt-4 pt-4 border-t">
-                      <div class="flex justify-between items-center">
+                          </svg> 
+                        </button>  
+                      </div> 
+                    </div> 
+                    <div class="mt-4 pt-4 border-t"> 
+                      <div class="flex justify-between items-center"> 
                         <span class="font-medium">Total:</span>
-                        <span class="font-bold text-primary-600">${{ cartStore.totalPrice.toFixed(2) }}</span>
-                      </div>
-                      <router-link to="/checkout" class="btn btn-primary w-full mt-4 block text-center">Checkout</router-link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+                        <span class="font-bold text-primary-600">${{ cartStore.totalPrice.toFixed(2) }}</span> 
+                      </div> 
+                      <router-link to="/checkout" class="btn btn-primary w-full mt-4 block text-center">Checkout</router-link> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </nav> 
+    </header> 
 
-    <!-- Main Content -->
+    <!-- Основной контент -->
     <main class="flex-grow">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <router-view></router-view>
@@ -94,9 +94,9 @@ const updateQuantity = (bookId, quantity) => {
     <footer class="bg-gray-900 text-white py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <!-- About -->
+          <!-- О Нас -->
           <div>
-            <h3 class="text-lg font-semibold mb-4">About Us</h3>
+            <h3 class="text-lg font-semibold mb-4">О Нас</h3>
             <p class="text-gray-400">
               Your trusted source for quality books and exceptional reading experiences.
             </p>
@@ -106,26 +106,26 @@ const updateQuantity = (bookId, quantity) => {
           <div>
             <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
             <ul class="space-y-2">
-              <li><router-link to="/" class="text-gray-400 hover:text-white">Home</router-link></li>
-              <li><router-link to="/books" class="text-gray-400 hover:text-white">Books</router-link></li>
-              <li><router-link to="/categories" class="text-gray-400 hover:text-white">Categories</router-link></li>
-              <li><router-link to="/about" class="text-gray-400 hover:text-white">About</router-link></li>
+              <li><router-link to="/" class="text-gray-400 hover:text-white">Главная</router-link></li>
+              <li><router-link to="/books" class="text-gray-400 hover:text-white">Каталог</router-link></li>
+              <li><router-link to="/categories" class="text-gray-400 hover:text-white">Категории</router-link></li>
+              <li><router-link to="/about" class="text-gray-400 hover:text-white">О Нас</router-link></li>
             </ul>
           </div>
 
-          <!-- Contact -->
+          <!-- Контакты -->
           <div>
             <h3 class="text-lg font-semibold mb-4">Contact</h3>
             <ul class="space-y-2 text-gray-400">
               <li>Email: info@bookshop.com</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Address: 123 Book Street, Reading City</li>
+              <li>Тел.: +7(705) 419-4567</li>
+              <li>Адресс: ул. Достык 34, Алмата, Казахстан</li>
             </ul>
           </div>
 
-          <!-- Social -->
+          <!-- Соц сети -->
           <div>
-            <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+            <h3 class="text-lg font-semibold mb-4">Подписывайся на нас</h3>
             <div class="flex space-x-4">
               <a href="#" class="text-gray-400 hover:text-white">
                 <span class="sr-only">Facebook</span>
@@ -149,7 +149,7 @@ const updateQuantity = (bookId, quantity) => {
           </div>
         </div>
         <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; 2024 BookShop. All rights reserved.</p>
+          <p>&copy; 2024 BookShop. Все Права защищены.</p>
         </div>
       </div>
     </footer>
