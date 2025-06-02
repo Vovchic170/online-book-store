@@ -109,24 +109,24 @@
             <input 
               type="text" 
               placeholder="Поиск книг..." 
-              class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
-              v-model="searchQuery"
-              @input="applyFilters"
-            >
-          </div>
+              class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500" 
+              v-model="searchQuery" 
+              @input="applyFilters" 
+            > 
+          </div> 
           <select 
-            class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
-            v-model="sortBy"
-            @change="applyFilters"
-          >
-            <option value="featured"> Рекомендуемые</option>
-            <option value="priceLow">Цена: от низких к высоким</option>
-            <option value="priceHigh">Цена: от высоких к низким</option>
-            <option value="newest">Новые-первыми</option>
-          </select>
-        </div>
-
-        <!-- Сетка из Книг -->
+            class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500" 
+            v-model="sortBy" 
+            @change="applyFilters" 
+          >    
+            <option value="featured"> Рекомендуемые</option> 
+            <option value="priceLow">Цена: от низких к высоким</option> 
+            <option value="priceHigh">Цена: от высоких к низким</option> 
+            <option value="newest">Новые-первыми</option> 
+          </select>    
+        </div>  
+   
+           <!-- Сетка из Книг --> 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="book in filteredBooks" :key="book.id" class="card group">
             <div class="relative aspect-[3/4] overflow-hidden">
