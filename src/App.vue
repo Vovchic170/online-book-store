@@ -54,7 +54,7 @@ const updateQuantity = (bookId, quantity) => {
                     <div v-for="item in cartStore.items" :key="item.id" class="flex items-center space-x-4 py-2 border-b">
                       <div class="flex-1">
                         <h4 class="text-sm font-medium text-gray-900">{{ item.title }}</h4>
-                        <p class="text-sm text-gray-500">{{ item.price }} x {{ item.quantity }}</p>
+                        <p class="text-sm text-gray-500">{{ item.price }}т x {{ item.quantity }}</p>
                       </div>
                       <div class="flex items-center space-x-2">
                         <button @click="updateQuantity(item.id, item.quantity - 1)" class="text-gray-500 hover:text-gray-700">-</button>
@@ -70,7 +70,7 @@ const updateQuantity = (bookId, quantity) => {
                     <div class="mt-4 pt-4 border-t"> 
                       <div class="flex justify-between items-center"> 
                         <span class="font-medium">Всего:</span> 
-                        <span class="font-bold text-primary-600">{{ cartStore.totalPrice.toFixed(2) }}</span>   
+                        <span class="font-bold text-primary-600">{{ cartStore.totalPrice.toFixed(2) }}т</span>   
                       </div>  
                       <router-link to="/checkout" class="btn btn-primary w-full mt-4 block text-center">Перейти к оплате</router-link> 
                     </div> 
