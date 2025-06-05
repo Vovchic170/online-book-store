@@ -23,7 +23,7 @@
           <div class="mt-6 pt-6 border-t"> 
             <div class="flex justify-between items-center mb-2"> 
               <span class="text-gray-600">Итого</span> 
-              <span class="font-medium">{{ cartStore.totalPrice.toFixed(2) }}т </span> 
+              <span class="font-medium">{{ cartStore.totalPrice.toFixed(2) }} т </span> 
             </div> 
             <div class="flex justify-between items-center mb-2">  
               <span class="text-gray-600">Доставка</span> 

@@ -21,7 +21,7 @@
         </div>
 
         <div class="mt-6">
-          <h2 class="text-2xl font-bold text-primary-600">${{ book.price }}</h2>
+          <h2 class="text-2xl font-bold text-primary-600">{{ book.price }} т</h2>
           <p class="text-green-600 mt-2">In Stock: {{ book.stock }}</p>
         </div>
 
@@ -66,8 +66,8 @@
               <h3 class="text-lg font-semibold text-gray-900">{{ relatedBook.title }}</h3>
               <p class="text-gray-600">{{ relatedBook.author }}</p>
               <div class="mt-2 flex items-center justify-between">
-                <span class="text-primary-600 font-semibold">${{ relatedBook.price }}</span>
-                <button class="btn btn-primary">Add to Cart</button>
+                <span class="text-primary-600 font-semibold">{{ relatedBook.price }} т</span>
+                <button class="btn btn-primary">Добавить в корзину</button>
               </div>
             </div>
           </router-link>
@@ -92,7 +92,7 @@ const book = ref({
   author: 'F. Scott Fitzgerald',
   rating: 4.5,
   reviews: 128,
-  price: 14.99,
+  price: 2500,
   stock: 15,
   cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
   description: 'The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway\'s interactions with mysterious millionaire Jay Gatsby and Gatsby\'s obsession to reunite with his former lover, Daisy Buchanan.',
@@ -126,7 +126,7 @@ const relatedBooks = ref([
     title: 'Pride and Prejudice',
     author: 'Jane Austen',
     price: 3500,
-    cover: 'https://images.unsplash.com/photo-1543002588- bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' 
+    cover: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   }    
 ]) 
          

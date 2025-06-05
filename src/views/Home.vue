@@ -32,10 +32,11 @@
               <h3 class="text-lg font-semibold text-gray-900">{{ book.title }}</h3> 
               <p class="text-gray-600">{{ book.author }}</p> 
               <div class="mt-2 flex items-center justify-between"> 
-                <span class="text-primary-600 font-semibold">${{ book.price }} </span>  
+                <span class="text-primary-600 font-semibold">{{ book.price }} т</span>  
                 <button class="btn btn-primary"  
 @click.prevent="addToCart(book)">Добавить в корзину</button> 
               </div>    
+              
             </div>     
           </router-link>   
         </div>   
