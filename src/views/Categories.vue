@@ -2,7 +2,7 @@
   <div>                      
     <h1 class="text-3xl font-bold text-gray-900 mb-8">Категории Книг</h1>
        
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">    
       <router-link   
         v-for="category in categories"  
         :key="category.id"
@@ -51,8 +51,8 @@ const categories = ref([
   { id: 7, name: 'Бизнесс', icon: '💼', count: 89 }, 
   { id: 8, name: 'Технологии', icon: '💻', count: 56 },
   { id: 9, name: 'Искусство и дизайн', icon: '🎨', count: 42 }
-])
-
+]) 
+  
 const featuredCategories = ref([
   {
     id: 1,

@@ -35,33 +35,33 @@
                 <span class="text-primary-600 font-semibold">${{ book.price }} </span>  
                 <button class="btn btn-primary"  
 @click.prevent="addToCart(book)">Добавить в корзину</button> 
-              </div>  
-            </div>  
-          </router-link>  
-        </div>  
-      </div>  
-    </div>  
-  
-    <!-- Раздел категорий --> 
-    <section class="bg-gray-50 py-12"> 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+              </div>    
+            </div>     
+          </router-link>   
+        </div>   
+      </div>   
+    </div>   
+   
+    <!-- Раздел категорий -->    
+    <section class="bg-gray-50 py-12">  
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">  
         <h2 class="text-3xl font-bold text-gray-900 mb-8">Просмотр по категориям</h2> 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <router-link v-for="category in categories" :key="category.id" 
             :to="'/categories/' + category.id"
             class="card p-6 text-center hover:shadow-lg transition-shadow duration-300">
             <div class="text-4xl mb-4">{{ category.icon }}</div>
-            <h3 class="text-lg font-semibold text-gray-900">{{ category.name }}</h3>
-          </router-link>
-        </div>
-      </div>
-    </section>
-  </div>
-</template>
-
-<script setup>
-import { ref } from 'vue'
-import { useCartStore } from '../stores/cart'
+            <h3 class="text-lg font-semibold text-gray-900">{{ category.name }}</h3> 
+          </router-link>  
+        </div>   
+      </div> 
+    </section> 
+  </div>  
+</template>  
+     
+<script setup>    
+import { ref } from 'vue'  
+import { useCartStore } from '../stores/cart'  
 
 const cartStore = useCartStore()
 
@@ -77,21 +77,21 @@ const featuredBooks = ref([
     id: 2, 
     title: 'Убить пересмешника',
     author: 'Харпер Ли',
-    price: 12.99,
+    price: 3000,
     cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 3,
     title: '1984',
     author: 'Джордж Оруэлл',
-    price: 9.99,
+    price: 5000,
     cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   }, 
   {  
     id: 4,  
     title: 'Гордость и предубеждение',  
     author: 'Джейн Остин',  
-    price: 11.99,  
+    price: 3500,  
     cover: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' 
   }  
 ])   

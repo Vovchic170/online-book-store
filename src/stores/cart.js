@@ -1,11 +1,11 @@
-import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
-
-export const useCartStore = defineStore('cart', () => {
-  const items = ref([])
-  const toastMessage = ref('')
-  const showToast = ref(false)
-
+import { defineStore } from 'pinia' 
+import { ref, computed } from 'vue' 
+  
+export const useCartStore = defineStore('cart', () => { 
+  const items = ref([]) 
+  const toastMessage = ref('') 
+  const showToast = ref(false) 
+ 
   const totalItems = computed(() => {
     return items.value.reduce((total, item) => total + item.quantity, 0)
   })
@@ -26,13 +26,13 @@ export const useCartStore = defineStore('cart', () => {
 
   const removeItem = (bookId) => {
     const index = items.value.findIndex(item => item.id === bookId)
-    if (index > -1) {
-      const removedItem = items.value[index]
-      items.value.splice(index, 1)
-      showToastMessage(`${removedItem.title} removed from cart`)
-    }
-  }
-
+    if (index > -1) { 
+      const removedItem = items.value[index] 
+      items.value.splice(index, 1) 
+      showToastMessage(`${removedItem.title} removed from cart`) 
+    } 
+  } 
+       
   const updateQuantity = (bookId, quantity) => {
     const item = items.value.find(item => item.id === bookId)
     if (item) {

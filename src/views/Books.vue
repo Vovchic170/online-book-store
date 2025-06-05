@@ -140,12 +140,12 @@
                 <p class="text-gray-600">{{ book.author }}</p>
               </router-link>
               <div class="mt-2 flex items-center justify-between">
-                <span class="text-primary-600 font-semibold">{{ book.price }}т</span> 
+                <span class="text-primary-600 font-semibold">{{ book.price }}т</span>    
                 <button class="btn btn-primary" @click="addToCart(book)">Добавить в корзину</button> 
-              </div> 
-            </div> 
-          </div> 
-        </div> 
+              </div>       
+            </div>          
+          </div>             
+        </div>                
 
         <!-- Сообщение об отсутствии результатов -->
         <div v-if="filteredBooks.length === 0" class="text-center py-8">
@@ -168,17 +168,17 @@
               @click="currentPage = page" 
             >{{ page }}</button> 
             <button 
-              class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50" 
-              :disabled="currentPage === totalPages" 
-              @click="currentPage++" 
-            >Следующие</button> 
-          </nav> 
-        </div> 
-      </div> 
-    </div> 
-  </div> 
-</template> 
- 
+              class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50"  
+              :disabled="currentPage === totalPages"  
+              @click="currentPage++"  
+            >Следующие</button>  
+          </nav>  
+        </div>  
+      </div>  
+    </div>  
+  </div>  
+</template>  
+     
 <script setup>
 import { ref, computed } from 'vue'
 import { useCartStore } from '../stores/cart'
@@ -191,7 +191,7 @@ const allBooks = ref([
     id: 1,
     title: 'Великий Гэтсби',
     author: 'Ф. Скотт Фиджеральд',
-    price: 14.99,
+    price: 2500,
     category: 'Фантастика',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -199,7 +199,7 @@ const allBooks = ref([
     id: 2,
     title: 'Убить пересмешника',
     author: 'Харпер Ли',
-    price: 12.99,
+    price: 3000,
     category: 'Фантастика',
     cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -207,7 +207,7 @@ const allBooks = ref([
     id: 3,
     title: 'Краткая история времени ',
     author: 'Стивен Хокинг',
-    price: 9.99,
+    price: 3500,
     category: 'Наука',
     cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -215,7 +215,7 @@ const allBooks = ref([
     id: 4,
     title: 'Гордость и предубеждение',
     author: 'Джейн Остин',
-    price: 11.99,
+    price: 3500,
     category: 'Роман',
     cover: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -223,7 +223,7 @@ const allBooks = ref([
     id: 5,
     title: 'Происхождение видов',
     author: 'Чарльз Дарвин',
-    price: 15.99,
+    price: 6000,
     category: 'Наука',
     cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   }, 
@@ -231,7 +231,7 @@ const allBooks = ref([
     id: 6, 
     title: 'Sapiens: Краткая история человечества',
     author: 'Юваль Ной Харари',
-    price: 19.99,
+    price: 7000,
     category: 'Исторические',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -239,7 +239,7 @@ const allBooks = ref([
     id: 7,
     title: 'Искусство войны',
     author: 'Сунь-цзы',
-    price: 8.99,
+    price: 10000,
     category: 'Исторические',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -247,7 +247,7 @@ const allBooks = ref([
     id: 8,
     title: 'Алхимик',
     author: 'Паоло Коэльо',
-    price: 13.99,
+    price: 4500,
     category: 'Роман',
     cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -255,7 +255,7 @@ const allBooks = ref([
     id: 9,
     title: 'Психология денег',
     author: 'Морган Хаузел',
-    price: 16.99,
+    price: 3500,
     category: 'Психология',
     cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   }, 
@@ -263,7 +263,7 @@ const allBooks = ref([
     id: 10, 
     title: 'Августовские пушки', 
     author: 'Барбара Такман', 
-    price: 17.99, 
+    price: 2500, 
     category: 'Исторические',
     cover: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -271,7 +271,7 @@ const allBooks = ref([
     id: 11,
     title: 'Эгоистичный Ген',
     author: 'Ричард Докинз',
-    price: 14.99,
+    price: 4700,
     category: 'Наука',
     cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
@@ -279,7 +279,7 @@ const allBooks = ref([
     id: 12,
     title: 'Полуночная библиотека',
     author: 'Мэтт Хейг',
-    price: 15.99,
+    price: 5200,
     category: 'Роман',
     cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   }   
@@ -302,9 +302,9 @@ const filters = ref({
 })  
    
 const searchQuery = ref('')  
-const sortBy = ref('featured')  
-const currentPage = ref(1)  
-const itemsPerPage = 6      
+const sortBy = ref('featured')   
+const currentPage = ref(1)   
+const itemsPerPage = 6       
    
 //  Вычисляемые свойства для отфильтрованных и отсортированных книг
 const filteredBooks = computed(() => {
@@ -319,13 +319,13 @@ const filteredBooks = computed(() => {
     )
   }
 
-   // Применить фильтры ценового диапазона
-  const activePriceRanges = Object.entries(filters.value.priceRanges)
-    .filter(([_, isActive]) => isActive)
-    .map(([range]) => range)
-
-  if (activePriceRanges.length > 0) {
-    result = result.filter(book => {
+   // Применить фильтры ценового диапазона 
+  const activePriceRanges = Object.entries(filters.value.priceRanges) 
+    .filter(([_, isActive]) => isActive) 
+    .map(([range]) => range) 
+ 
+  if (activePriceRanges.length > 0) { 
+    result = result.filter(book => { 
       if (activePriceRanges.includes('under10') && book.price < 10) return true
       if (activePriceRanges.includes('tenTo20') && book.price >= 10 && book.price < 20) return true
       if (activePriceRanges.includes('twentyTo30') && book.price >= 20 && book.price < 30) return true

@@ -16,7 +16,7 @@
                 </div> 
               </div> 
               <div class="text-right">         
-                <p class="font-medium">${{ (item.price * item.quantity).toFixed(2) }}</p> 
+                <p class="font-medium">{{ (item.price * item.quantity).toFixed(2) }}т</p> 
               </div>  
             </div>    
           </div>        

@@ -111,36 +111,39 @@ const relatedBooks = ref([
     id: 2,
     title: 'To Kill a Mockingbird',
     author: 'Harper Lee',
-    price: 12.99,
+    price: 3000,
     cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  },
-  {
-    id: 3,
-    title: '1984',
-    author: 'George Orwell',
-    price: 9.99,
+  },   
+  {   
+    id: 3,     
+    title: '1984',  
+    author: 'George Orwell', 
+    price: 5000, 
     cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 4,
     title: 'Pride and Prejudice',
     author: 'Jane Austen',
-    price: 11.99,
-    cover: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  }
-])
-
-const addToCart = () => {
-  cartStore.addItem({
-    id: book.value.id,
-    title: book.value.title,
-    price: book.value.price,
-    quantity: 1
-  })
-}
-
-onMounted(() => {
+    price: 3500,
+    cover: 'https://images.unsplash.com/photo-1543002588- bfa74002ed7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' 
+  }    
+]) 
+         
+const addToCart = () => { 
+  cartStore.addItem({ 
+    id: book.value.id, 
+    title: book.value.title, 
+    price: book.value.price, 
+    quantity: 1  
+  })   
+}      
+   
+onMounted(() => { 
   // In a real application, we would fetch the book data based on the route.params.id
-  console.log('Book ID:', route.params.id)
-})
+  console.log('Book ID:', route.params.id) 
+}) 
 </script> 
+
+
+
