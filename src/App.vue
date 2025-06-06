@@ -18,7 +18,7 @@ const updateQuantity = (bookId, quantity) => {
 <template> 
   <div class="min-h-screen flex flex-col"> 
     <!-- Уведомление --> 
-    <Toast v-if="cartStore.showToast" :message="cartStore.toastMessage" />
+    <Toast v-if="cartStore.showToast" :message="cartStore.toastMessage" /> 
      
     <!-- Header -->
     <header class="bg-white shadow-sm">

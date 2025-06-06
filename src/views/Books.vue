@@ -56,7 +56,7 @@
                 <input     
                   type="checkbox" 
                   class="rounded text-primary-600"
-                  v-model="filters.categories.fiction"
+                  v-model="filters.categories.Фантастика"
                   @change="applyFilters"
                 >
                 <span class="ml-2">Фантастика</span>
@@ -65,7 +65,7 @@
                 <input 
                   type="checkbox" 
                   class="rounded text-primary-600"
-                  v-model="filters.categories.nonFiction" 
+                  v-model="filters.categories.Роман" 
                   @change="applyFilters"  
                 >
                 <span class="ml-2">Нонфикшен</span>
@@ -74,7 +74,7 @@
                 <input 
                   type="checkbox" 
                   class="rounded text-primary-600"
-                  v-model="filters.categories.science"
+                  v-model="filters.categories.Наука"
                   @change="applyFilters"
                 >
                 <span class="ml-2">Наука</span>
@@ -83,7 +83,7 @@
                 <input 
                   type="checkbox" 
                   class="rounded text-primary-600"
-                  v-model="filters.categories.history"
+                  v-model="filters.categories.Исторические"
                   @change="applyFilters"
                 >
                 <span class="ml-2">Исторические</span>
@@ -326,10 +326,10 @@ const filteredBooks = computed(() => {
  
   if (activePriceRanges.length > 0) { 
     result = result.filter(book => { 
-      if (activePriceRanges.includes('under10') && book.price < 10) return true
-      if (activePriceRanges.includes('tenTo20') && book.price >= 10 && book.price < 20) return true
-      if (activePriceRanges.includes('twentyTo30') && book.price >= 20 && book.price < 30) return true
-      if (activePriceRanges.includes('over30') && book.price >= 30) return true  
+      if (activePriceRanges.includes('under10') && book.price < 2000) return true
+      if (activePriceRanges.includes('tenTo20') && book.price >= 2000 && book.price < 3000) return true
+      if (activePriceRanges.includes('twentyTo30') && book.price >= 3000 && book.price < 4000) return true
+      if (activePriceRanges.includes('over30') && book.price >= 4000) return true  
       return false  
     })     
   }        

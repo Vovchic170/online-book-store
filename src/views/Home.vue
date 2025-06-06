@@ -1,6 +1,6 @@
-<template> 
-  <div> 
-     <!-- Раздел Hero --> 
+<template>  
+  <div>  
+     <!-- Раздел Hero -->  
     <section class="bg-primary-600 text-white py-16"> 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
         <div class="text-center"> 
@@ -26,9 +26,9 @@
         <div v-for="book in featuredBooks" :key="book.id" class="card group">
           <router-link :to="'/book/' + book.id" class="block">
             <div class="relative aspect-[3/4] overflow-hidden">
-              <img :src="book.cover" :alt="book.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            </div>
-            <div class="p-4">
+              <img :src="book.cover" :alt="book.title" class="w-full h-full object-cover group-hover:scale-105 transition- transform duration-300"> 
+            </div> 
+            <div class="p-4"> 
               <h3 class="text-lg font-semibold text-gray-900">{{ book.title }}</h3> 
               <p class="text-gray-600">{{ book.author }}</p> 
               <div class="mt-2 flex items-center justify-between"> 
@@ -49,8 +49,8 @@
         <h2 class="text-3xl font-bold text-gray-900 mb-8">Просмотр по категориям</h2> 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <router-link v-for="category in categories" :key="category.id" 
-            :to="'/categories/' + category.id"
-            class="card p-6 text-center hover:shadow-lg transition-shadow duration-300">
+            :to="'/categories/' + category.id" 
+            class="card p-6 text-center hover:shadow-lg transition-shadow duration-300"> 
             <div class="text-4xl mb-4">{{ category.icon }}</div>
             <h3 class="text-lg font-semibold text-gray-900">{{ category.name }}</h3> 
           </router-link>  
@@ -113,6 +113,7 @@ const addToCart = (book) => {
   }) 
 } 
 </script> 
+
 
 
 

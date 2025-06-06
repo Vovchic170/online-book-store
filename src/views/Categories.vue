@@ -1,8 +1,9 @@
-<template>                   
-  <div>                      
-    <h1 class="text-3xl font-bold text-gray-900 mb-8">Категории Книг</h1>
-       
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">    
+<template>                    
+  <div>                       
+    <h1 class="text-3xl font-bold text-gray-900 mb-8"> Категории Книг </h1> 
+            
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">      
+          
       <router-link   
         v-for="category in categories"  
         :key="category.id"
@@ -19,24 +20,24 @@
       </router-link>
     </div>
 
-    <!-- Рекомендуемые категории -->
+    <!-- Рекомендуемые категории --> 
     <div class="mt-16">
       <h2 class="text-2xl font-bold text-gray-900 mb-6">Рекомендуемые категории</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> 
         <div v-for="featured in featuredCategories" :key="featured.id" class="card overflow-hidden"> 
-          <div class="relative h-48"> 
-            <img :src="featured.image" :alt="featured.name" class="w-full h-full object-cover">
+          <div class="relative h-48">  
+            <img :src="featured.image" :alt="featured.name" class="w-full h-full object-cover"> 
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 p-6 text-white">
-              <h3 class="text-2xl font-bold">{{ featured.name }}</h3>
-              <p class="mt-2">{{ featured.description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template> 
+              <h3 class="text-2xl font-bold">{{ featured.name }}</h3>    
+              <p class="mt-2">{{ featured.description }}</p>  
+            </div>  
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+</template>  
     
 <script setup> 
 import { ref } from 'vue' 
@@ -49,10 +50,10 @@ const categories = ref([
   { id: 5, name: 'Биография', icon: '👤', count: 34 }, 
   { id: 6, name: 'Поэзия', icon: '✒️', count: 23 }, 
   { id: 7, name: 'Бизнесс', icon: '💼', count: 89 }, 
-  { id: 8, name: 'Технологии', icon: '💻', count: 56 },
-  { id: 9, name: 'Искусство и дизайн', icon: '🎨', count: 42 }
+  { id: 8, name: 'Технологии', icon: '💻', count: 56 }, 
+  { id: 9, name: 'Искусство и дизайн', icon: '🎨', count: 42 } 
 ]) 
-  
+             
 const featuredCategories = ref([
   {
     id: 1,
