@@ -17,7 +17,7 @@
                   v-model="filters.priceRanges.under10"
                   @change="applyFilters"
                 >
-                <span class="ml-2">До $10</span>
+                <span class="ml-2">До 2000т</span>
               </label>
               <label class="flex items-center">
                 <input 
@@ -26,7 +26,7 @@
                   v-model="filters.priceRanges.tenTo20"
                   @change="applyFilters" 
                 >    
-                <span class="ml-2">$10 - $20</span> 
+                <span class="ml-2">2000т - 3000т</span> 
               </label> 
               <label class="flex items-center"> 
                 <input  
@@ -34,16 +34,16 @@
                   class="rounded text-primary-600" 
                v-model="filters.priceRanges.twentyTo30"
                   @change="applyFilters" > 
-                <span class="ml-2">$20 - $30</span> 
+                <span class="ml-2">3000т - 4000т</span> 
               </label> 
               <label class="flex items-center">  
                 <input 
                   type="checkbox"    
                   class="rounded text-primary-600"
                   v-model="filters.priceRanges.over30"
-                  @change="applyFilters"
+                  @change="applyFilters" 
                 >
-                <span class="ml-2">Выше $30</span>
+                <span class="ml-2">Выше 4000т</span>
               </label>
             </div>
           </div>
@@ -56,7 +56,7 @@
                 <input     
                   type="checkbox" 
                   class="rounded text-primary-600"
-                  v-model="filters.categories.Фантастика"
+                  v-model="filters.categories.Фантастика" 
                   @change="applyFilters"
                 >
                 <span class="ml-2">Фантастика</span>
@@ -85,14 +85,14 @@
                   class="rounded text-primary-600"
                   v-model="filters.categories.Исторические"
                   @change="applyFilters"
-                >
+                >    
                 <span class="ml-2">Исторические</span>
-              </label>
-            </div>
-          </div>
-
-          <!--  Очистить фильтры -->
-          <button 
+              </label>    
+            </div>   
+          </div>     
+  
+          <!--  Очистить фильтры -->   
+          <button   
             class="btn btn-secondary w-full mt-4"
             @click="clearFilters"
           >
@@ -117,8 +117,8 @@
           <select  
             class="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"  
             v-model="sortBy"  
-            @change="applyFilters"  
-          >     
+            @change="applyFilters"   
+          >      
             <option value="featured"> Рекомендуемые</option> 
             <option value="priceLow">Цена: от низких к высоким</option> 
             <option value="priceHigh">Цена: от высоких к низким</option> 
