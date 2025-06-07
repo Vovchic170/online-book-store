@@ -11,13 +11,14 @@ const updateQuantity = (bookId, quantity) => {
     cartStore.updateQuantity(bookId, quantity) 
   } else { 
     cartStore.removeItem(bookId) 
-  } 
-} 
-</script> 
- 
-<template> 
-  <div class="min-h-screen flex flex-col"> 
-    <!-- Уведомление --> 
+  }  
+}   
+</script>         
+
+             <!-- Основной контейнер -->
+<template>       
+  <div class="min-h-screen flex flex-col">   
+    <!-- Уведомление -->   
     <Toast v-if="cartStore.showToast" :message="cartStore.toastMessage" /> 
      
     <!-- Header -->
@@ -25,41 +26,41 @@ const updateQuantity = (bookId, quantity) => {
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
           <div class="flex items-center">
-            <router-link to="/" class="text-2xl font-bold text-primary-600">
+            <router-link to="/" class="text-2xl font-bold text-primary-600"> 
               BookShop 
             </router-link> 
           </div> 
           <div class="flex items-center space-x-4"> 
             <router-link to="/" class="text-gray-600 hover:text-gray-900">Главная</router-link>
             <router-link to="/books" class="text-gray-600 hover:text-gray-900">Каталог</router-link>
-            <router-link to="/categories" class="text-gray-600 hover:text-gray-900">Категории</router-link>
+            <router-link to="/categories" class="text-gray-600 hover:text-gray-900">Категории</router-link> 
             <!-- Раскрывающийся список корзины -->
             <div class="relative" @click="isCartOpen = !isCartOpen">
               <button class="btn btn-primary">
                 <span class="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                  Корзина ({{ cartStore.totalItems }})
-                </span>
-              </button>
-              
-              <!-- Выпадающее меню корзины -->
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> 
+                  </svg> 
+                  Корзина ({{ cartStore.totalItems }}) 
+                </span> 
+              </button> 
+               
+              <!-- Выпадающее меню корзины --> 
               <div v-if="isCartOpen" class="absolute right-0 mt-2 w-96 bg-white rounded-lg shadow-lg z-50">
                 <div class="p-4">
-                  <div v-if="cartStore.items.length === 0" class="text-center py-4">
+                  <div v-if="cartStore.items.length === 0" class="text-center py-4"> 
                     <p class="text-gray-500">Ваша корзина пуста</p>
-                  </div>
-                  <div v-else>
+                  </div> 
+                  <div v-else>  
                     <div v-for="item in cartStore.items" :key="item.id" class="flex items-center space-x-4 py-2 border-b">
-                      <div class="flex-1">
-                        <h4 class="text-sm font-medium text-gray-900">{{ item.title }}</h4>
-                        <p class="text-sm text-gray-500">{{ item.price }}т x {{ item.quantity }}</p>
-                      </div>
-                      <div class="flex items-center space-x-2">
-                        <button @click="updateQuantity(item.id, item.quantity - 1)" class="text-gray-500 hover:text-gray-700">-</button>
+                      <div class="flex-1"> 
+                        <h4 class="text-sm font-medium text-gray-900">{{ item.title }}</h4> 
+                        <p class="text-sm text-gray-500">{{ item.price }}т x {{ item.quantity }}</p> 
+                      </div> 
+                      <div class="flex items-center space-x-2"> 
+                        <button @click="updateQuantity(item.id, item.quantity - 1)" class="text-gray-500 hover:text-gray-700">-</button> 
                         <span class="text-gray-700">{{item.quantity }}</span> 
-                        <button @click="updateQuantity(item.id, item.quantity + 1)" class="text-gray-500 hover:text-gray-700">+</button>
+                        <button @click="updateQuantity(item.id, item.quantity + 1)" class="text-gray-500 hover:text-gray-700">+</button> 
                         <button @click="cartStore.removeItem(item.id)" class="text-red-500 hover:text-red-700">
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /> 
@@ -68,9 +69,9 @@ const updateQuantity = (bookId, quantity) => {
                       </div> 
                     </div> 
                     <div class="mt-4 pt-4 border-t"> 
-                      <div class="flex justify-between items-center"> 
+                      <div class="flex justify-between items- center"> 
                         <span class="font-medium">Всего:</span> 
-                        <span class="font-bold text-primary-600">{{ cartStore.totalPrice.toFixed(2) }}т</span>   
+                        <span class="font-bold text-primary-600"> {{ cartStore.totalPrice.toFixed(2) }}т</span>   
                       </div>  
                       <router-link to="/checkout" class="btn btn-primary w-full mt-4 block text-center">Перейти к оплате</router-link> 
                     </div> 
@@ -97,7 +98,7 @@ const updateQuantity = (bookId, quantity) => {
           <!-- О Нас -->
           <div>
             <h3 class="text-lg font-semibold mb-4">О Нас</h3>
-            <p class="text-gray-400">
+            <p class="text-gray-400"> 
               Ваш надежный источник качественных книг и исключительных впечатлений от чтения. 
             </p> 
           </div> 
@@ -132,7 +133,7 @@ const updateQuantity = (bookId, quantity) => {
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
                 </svg>
-              </a>
+              </a> 
               <a href="#" class="text-gray-400 hover:text-white">
                 <span class="sr-only">Instagram</span>
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

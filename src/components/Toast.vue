@@ -1,3 +1,8 @@
+
+
+
+
+
 <template>
   <Transition
     enter-active-class="transform ease-out duration-300 transition"
@@ -48,3 +53,12 @@ watch(show, (newValue) => {
   }
 })
 </script> 
+
+
+
+
+
+
+
+
+

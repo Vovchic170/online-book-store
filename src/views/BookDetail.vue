@@ -3,8 +3,8 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Book Image -->
       <div class="card overflow-hidden">
-        <img :src="book.cover" :alt="book.title" class="w-full h-full object-cover">
-      </div>
+        <img :src="book.cover" :alt="book.title" class="w-full h-full object-cover"> 
+      </div> 
 
       <!-- Book Details -->
       <div>

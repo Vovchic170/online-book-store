@@ -16,6 +16,7 @@
             </router-link>  
           </div>   
         </div>   
+        
       </div>     
     </section>  
        
@@ -72,7 +73,7 @@ const featuredBooks = ref([
     title: 'Великий Гэтсби', 
     author: 'Ф. Скотт Фицджеральд', 
     price: 2500,
-    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
+    cover: '/public/Pictures/great_gatsby_atmosphere.jpg'
   }, 
   { 
     id: 2, 

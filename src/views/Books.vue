@@ -28,18 +28,18 @@
                 >    
                 <span class="ml-2">2000т - 3000т</span> 
               </label> 
-              <label class="flex items-center"> 
-                <input  
-                  type="checkbox"  
-                  class="rounded text-primary-600" 
-               v-model="filters.priceRanges.twentyTo30"
-                  @change="applyFilters" > 
-                <span class="ml-2">3000т - 4000т</span> 
-              </label> 
               <label class="flex items-center">  
-                <input 
+                <input   
+                  type="checkbox"   
+                  class="rounded text-primary-600"   
+               v-model="filters.priceRanges.twentyTo30"  
+                  @change="applyFilters" >   
+                <span class="ml-2">3000т - 4000т</span>   
+              </label>   
+              <label class="flex items-center">    
+                <input     
                   type="checkbox"    
-                  class="rounded text-primary-600"
+                  class="rounded text-primary-600" 
                   v-model="filters.priceRanges.over30"
                   @change="applyFilters" 
                 >
