@@ -67,11 +67,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import { useCartStore } from '../stores/cart'
+import { ref, onMounted } from 'vue' 
+import { useRoute } from 'vue-router' 
+import { useCartStore } from '../stores/cart' 
 
-const route = useRoute()
+const route = useRoute() 
 const cartStore = useCartStore()
 
 // In a real application, this would be fetched from an API based on the category ID

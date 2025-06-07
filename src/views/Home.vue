@@ -64,30 +64,30 @@
 <script setup>    
 import { ref } from 'vue'  
 import { useCartStore } from '../stores/cart'  
-
-const cartStore = useCartStore()
-
-const featuredBooks = ref([
-  {
+ 
+const cartStore = useCartStore() 
+ 
+const featuredBooks = ref([ 
+  { 
     id: 1,
     title: 'Великий Гэтсби', 
     author: 'Ф. Скотт Фицджеральд', 
     price: 2500,
     cover: '/public/Pictures/great_gatsby_atmosphere.jpg'
-  }, 
-  { 
+  },    
+  {       
     id: 2, 
-    title: 'Убить пересмешника',
-    author: 'Харпер Ли',
-    price: 3000,
-    cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  },
-  {
+    title: 'Убить пересмешника',   
+    author: 'Харпер Ли',   
+    price: 3000,    
+    cover: '/public/Pictures/to_kill_a_mockingbird_atmosphere.jpg'       
+  },   
+  {    
     id: 3,
     title: '1984',
     author: 'Джордж Оруэлл',
     price: 5000,
-    cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
+    cover: 'public/Pictures/1984_orwell_atmosphere.jpg'
   }, 
   {  
     id: 4,  
