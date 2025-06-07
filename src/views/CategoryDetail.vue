@@ -1,16 +1,16 @@
-<template>
-  <div>
-    <div class="flex flex-col md:flex-row gap-8">
-      <!-- Category Info -->
-      <div class="w-full md:w-64">
-        <div class="card p-6">
-          <div class="text-4xl mb-4">{{ category.icon }}</div>
-          <h1 class="text-2xl font-bold text-gray-900">{{ category.name }}</h1>
-          <p class="text-gray-600 mt-2">{{ category.count }} books</p>
-          <p class="text-gray-600 mt-4">{{ category.description }}</p>
-        </div>
-      </div>
-
+<template> 
+  <div> 
+    <div class="flex flex-col md:flex-row gap-8"> 
+      <!-- Category Info --> 
+      <div class="w-full md:w-64"> 
+        <div class="card p-6"> 
+          <div class="text-4xl mb-4">{{ category.icon }}</div> 
+          <h1 class="text-2xl font-bold text-gray-900">{{ category.name }}</h1> 
+          <p class="text-gray-600 mt-2">{{ category.count }} books</p> 
+          <p class="text-gray-600 mt-4">{{ category.description }}</p> 
+        </div> 
+      </div> 
+ 
       <!-- Books Grid -->
       <div class="flex-1">
         <!-- Search and Sort -->
@@ -35,19 +35,19 @@
           <div v-for="book in categoryBooks" :key="book.id" class="card group">
             <div class="relative aspect-[3/4] overflow-hidden">
               <router-link :to="'/book/' + book.id">
-                <img :src="book.cover" :alt="book.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-              </router-link>
-            </div>
-            <div class="p-4">
-              <router-link :to="'/book/' + book.id">
-                <h3 class="text-lg font-semibold text-gray-900">{{ book.title }}</h3>
+                <img :src="book.cover" :alt="book.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">          
+              </router-link>      
+            </div>   
+            <div class="p-4">   
+              <router-link :to="'/book/' + book.id"> 
+                <h3 class="text-lg font-semibold text-gray-900">{{ book.title }}</h3>  
                 <p class="text-gray-600">{{ book.author }}</p>
               </router-link>
               <div class="mt-2 flex items-center justify-between">
                 <span class="text-primary-600 font-semibold">${{ book.price }}</span>
                 <button class="btn btn-primary" @click="addToCart(book)">Add to Cart</button>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
 
@@ -55,9 +55,9 @@
         <div class="mt-8 flex justify-center">
           <nav class="flex items-center space-x-2">
             <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50">Previous</button>
-            <button class="px-3 py-1 rounded-md bg-primary-600 text-white">1</button>
-            <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">2</button>
-            <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">3</button>
+            <button class="px-3 py-1 rounded-md bg-primary-600 text-white">1</button> 
+            <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">2</button> 
+            <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">3</button>  
             <button class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50">Next</button>
           </nav>
         </div>
@@ -81,15 +81,15 @@ const category = ref({
   icon: '📚',
   count: 156,
   description: 'Explore our collection of fiction books, from contemporary novels to classic literature.'
-})
-
-const categoryBooks = ref([
-  {
-    id: 1,
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
-    price: 14.99,
-    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
+}) 
+ 
+const categoryBooks = ref([ 
+  { 
+    id: 1, 
+    title: 'The Great Gatsby', 
+    author: 'F. Scott Fitzgerald', 
+    price: 14.99, 
+    cover: '/public/Pictures/great_gatsby_atmosphere.jpg'
   },
   {
     id: 2,
@@ -142,3 +142,13 @@ onMounted(() => {
   console.log('Category ID:', route.params.id)
 })
 </script> 
+
+
+
+
+
+
+
+
+
+

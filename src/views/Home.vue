@@ -5,14 +5,14 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
         <div class="text-center"> 
           <h1 class="text-4xl font-bold sm:text-5xl md:text-6xl"> 
-            Откройте для себя свою следующую любимую книгу 
+             Келесі сүйікті кітабыңызды табыңыз 
           </h1>  
           <p class="mt-4 text-xl text-primary-100"> 
-            Изучите нашу обширную коллекцию книг всех жанров 
+            Барлық жанрдағы кітаптардың кең жинағын зерттеңіз 
           </p> 
           <div class="mt-8"> 
             <router-link to="/books" class="btn bg-white text-primary-600  hover:bg-primary-50"> 
-              Просмотр книг  
+              Кітаптарды шолу  
             </router-link>  
           </div>   
         </div>   
@@ -22,7 +22,7 @@
        
     <!-- Рекомендуемые книги --> 
     <div class="mt-16"> 
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">Рекомендуемые книги</h2>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Ұсынылатын кітаптар</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div v-for="book in featuredBooks" :key="book.id" class="card group">
           <router-link :to="'/book/' + book.id" class="block">
@@ -35,7 +35,7 @@
               <div class="mt-2 flex items-center justify-between"> 
                 <span class="text-primary-600 font-semibold">{{ book.price }} т</span>  
                 <button class="btn btn-primary"  
-@click.prevent="addToCart(book)">Добавить в корзину</button> 
+@click.prevent="addToCart(book)">Себетке қосу</button> 
               </div>    
               
             </div>     
@@ -47,19 +47,19 @@
     <!-- Раздел категорий -->    
     <section class="bg-gray-50 py-12">  
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">  
-        <h2 class="text-3xl font-bold text-gray-900 mb-8">Просмотр по категориям</h2> 
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Санат бойынша шолыңыз</h2> 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <router-link v-for="category in categories" :key="category.id" 
             :to="'/categories/' + category.id" 
             class="card p-6 text-center hover:shadow-lg transition-shadow duration-300"> 
             <div class="text-4xl mb-4">{{ category.icon }}</div>
-            <h3 class="text-lg font-semibold text-gray-900">{{ category.name }}</h3> 
-          </router-link>  
-        </div>   
-      </div> 
-    </section> 
-  </div>  
-</template>  
+            <h3 class="text-lg font-semibold text-gray-900">{{ category.name }}</h3>      
+          </router-link>   
+        </div>     
+      </div>       
+    </section>      
+  </div>        
+</template>       
      
 <script setup>    
 import { ref } from 'vue'  
@@ -80,14 +80,14 @@ const featuredBooks = ref([
     title: 'Убить пересмешника',   
     author: 'Харпер Ли',   
     price: 3000,    
-    cover: '/public/Pictures/to_kill_a_mockingbird_atmosphere.jpg'       
+    cover: 'public/Pictures/to_kill_a_mockingbird_atmosphere.jpg'       
   },   
   {    
     id: 3,
     title: '1984',
     author: 'Джордж Оруэлл',
     price: 5000,
-    cover: 'public/Pictures/1984_orwell_atmosphere.jpg'
+    cover: '/public/Pictures/1984_orwell_atmosphere.jpg'
   }, 
   {  
     id: 4,  
@@ -99,10 +99,10 @@ const featuredBooks = ref([
 ])   
        
 const categories = ref([ 
-  { id: 1, name: 'Фантастика', icon: '📚' }, 
+  { id: 1, name: 'Қиял', icon: '📚' }, 
   { id: 2, name: 'Роман', icon: '📖' },  
-  { id: 3, name: 'Наука', icon: '🔬' },  
-  { id: 4, name: 'Исторические', icon: '⏳' }  
+  { id: 3, name: 'Ғылым', icon: '🔬' },  
+  { id: 4, name: 'Тарихи', icon: '⏳' }  
 ])   
      
 const addToCart = (book) => { 

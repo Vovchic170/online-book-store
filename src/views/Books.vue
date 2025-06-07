@@ -43,33 +43,33 @@
                   v-model="filters.priceRanges.over30"
                   @change="applyFilters" 
                 >
-                <span class="ml-2">Выше 4000т</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Категории --> 
+                <span class="ml-2">Выше 4000т</span> 
+              </label> 
+            </div> 
+          </div> 
+   
+            <!-- Категории --> 
           <div class="mb-4">   
-            <h4 class="font-medium mb-2">Категории</h4>
-            <div class="space-y-2"> 
-              <label class="flex items-center">  
-                <input     
+            <h4 class="font-medium mb-2">Категории</h4> 
+            <div class="space-y-2">  
+              <label class="flex items-center">   
+                <input      
+                  type="checkbox"  
+                  class="rounded text-primary-600" 
+                  v-model="filters.categories.Фантастика"  
+                  @change="applyFilters" 
+                > 
+                <span class="ml-2"> Фантастика </span> 
+              </label> 
+              <label class="flex items-center"> 
+                <input  
                   type="checkbox" 
-                  class="rounded text-primary-600"
-                  v-model="filters.categories.Фантастика" 
-                  @change="applyFilters"
-                >
-                <span class="ml-2">Фантастика</span>
-              </label>
-              <label class="flex items-center">
-                <input 
-                  type="checkbox" 
-                  class="rounded text-primary-600"
-                  v-model="filters.categories.Роман" 
-                  @change="applyFilters"  
-                >
-                <span class="ml-2">Нонфикшен</span>
-              </label>
+                  class="rounded text-primary-600" 
+                  v-model="filters.categories.Роман"  
+                  @change="applyFilters"   
+                > 
+                <span class="ml-2">Нонфикшен</span> 
+              </label> 
               <label class="flex items-center">
                 <input 
                   type="checkbox" 
@@ -193,15 +193,15 @@ const allBooks = ref([
     author: 'Ф. Скотт Фиджеральд',
     price: 2500,
     category: 'Фантастика',
-    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
-  },
-  {
-    id: 2,
-    title: 'Убить пересмешника',
-    author: 'Харпер Ли',
-    price: 3000,
-    category: 'Фантастика',
-    cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'
+cover:'/public/Pictures/great_gatsby_atmosphere.jpg'
+  },  
+  {   
+    id: 2,  
+    title: 'Убить пересмешника', 
+    author: 'Харпер Ли', 
+    price: 3000, 
+    category: 'Фантастика', 
+    cover: '/public/Pictures/to_kill_a_mockingbird_atmosphere.jpg'
   },
   {
     id: 3,
