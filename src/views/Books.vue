@@ -4,11 +4,11 @@
       <!-- Боковая панель фильтров -->
       <div class="w-full md:w-64 space-y-6">
         <div class="card p-4">
-          <h3 class="text-lg font-semibold mb-4">Фильтры</h3>
+          <h3 class="text-lg font-semibold mb-4">Сүзгілер</h3>
           
           <!--     Ценовой диапазон -->
           <div class="mb-4">
-            <h4 class="font-medium mb-2">Ценовой диапазон</h4>
+            <h4 class="font-medium mb-2">Баға диапазоны</h4>
             <div class="space-y-2">
               <label class="flex items-center">
                 <input 
@@ -17,7 +17,7 @@
                   v-model="filters.priceRanges.under10"
                   @change="applyFilters"
                 >
-                <span class="ml-2">До 2000т</span>
+                <span class="ml-2">Кімге 2000т</span>
               </label>
               <label class="flex items-center">
                 <input 
@@ -43,14 +43,14 @@
                   v-model="filters.priceRanges.over30"
                   @change="applyFilters" 
                 >
-                <span class="ml-2">Выше 4000т</span> 
+                <span class="ml-2">Көбірек 4000т</span> 
               </label> 
             </div> 
           </div> 
    
             <!-- Категории --> 
           <div class="mb-4">   
-            <h4 class="font-medium mb-2">Категории</h4> 
+            <h4 class="font-medium mb-2">Санаттар</h4> 
             <div class="space-y-2">  
               <label class="flex items-center">   
                 <input      
@@ -59,7 +59,7 @@
                   v-model="filters.categories.Фантастика"  
                   @change="applyFilters" 
                 > 
-                <span class="ml-2"> Фантастика </span> 
+                <span class="ml-2"> Қиял </span> 
               </label> 
               <label class="flex items-center"> 
                 <input  
@@ -68,7 +68,7 @@
                   v-model="filters.categories.Роман"  
                   @change="applyFilters"   
                 > 
-                <span class="ml-2">Нонфикшен</span> 
+                <span class="ml-2">Қиял</span> 
               </label> 
               <label class="flex items-center">
                 <input 
@@ -77,7 +77,7 @@
                   v-model="filters.categories.Наука"
                   @change="applyFilters"
                 >
-                <span class="ml-2">Наука</span>
+                <span class="ml-2">Ғылым</span>
               </label>
               <label class="flex items-center">
                 <input 
@@ -86,7 +86,7 @@
                   v-model="filters.categories.Исторические"
                   @change="applyFilters"
                 >    
-                <span class="ml-2">Исторические</span>
+                <span class="ml-2">Тарихи</span>
               </label>    
             </div>   
           </div>     
@@ -96,7 +96,7 @@
             class="btn btn-secondary w-full mt-4"
             @click="clearFilters"
           >
-            Очистить фильтры
+            Сүзгілерді тазалау
           </button>
         </div>
       </div>
@@ -108,7 +108,7 @@
           <div class="w-full sm:w-64">
             <input 
               type="text" 
-              placeholder="Поиск книг..." 
+              placeholder="Кітап іздеу..." 
               class="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500" 
               v-model="searchQuery"  
               @input="applyFilters"  
@@ -119,10 +119,10 @@
             v-model="sortBy"  
             @change="applyFilters"   
           >      
-            <option value="featured"> Рекомендуемые</option> 
-            <option value="priceLow">Цена: от низких к высоким</option> 
-            <option value="priceHigh">Цена: от высоких к низким</option> 
-            <option value="newest">Новые-первыми</option> 
+            <option value="featured"> Таңдаулы</option> 
+            <option value="priceLow">Бағасы: төменнен жоғарыға дейін</option> 
+            <option value="priceHigh">Бағасы: жоғарыдан төменге дейін</option> 
+            <option value="newest">Алдымен жаңалары</option> 
           </select>    
         </div>  
    
@@ -141,7 +141,7 @@
               </router-link>
               <div class="mt-2 flex items-center justify-between">
                 <span class="text-primary-600 font-semibold">{{ book.price }}т</span>    
-                <button class="btn btn-primary" @click="addToCart(book)">Добавить в корзину</button> 
+                <button class="btn btn-primary" @click="addToCart(book)">Себетке қосу</button> 
               </div>       
             </div>          
           </div>             
@@ -149,7 +149,8 @@
 
         <!-- Сообщение об отсутствии результатов -->
         <div v-if="filteredBooks.length === 0" class="text-center py-8">
-          <p class="text-gray-500">Книг, соответствующих вашим критериям, не найдено.</p> 
+          <p class="text-gray-500">
+          Шарттарыңызға сәйкес келетін кітаптар табылмады.</p> 
         </div> 
    
             <!-- Пагинация --> 
@@ -159,7 +160,7 @@
               class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50" 
               :disabled="currentPage === 1" 
               @click="currentPage--"
-            >Предыдущие</button> 
+            >Алдыңғы</button> 
             <button  
               v-for="page in totalPages"  
               :key="page" 
@@ -171,7 +172,7 @@
               class="px-3 py-1 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50"  
               :disabled="currentPage === totalPages"  
               @click="currentPage++"  
-            >Следующие</button>  
+            >Келесі</button>  
           </nav>  
         </div>  
       </div>  

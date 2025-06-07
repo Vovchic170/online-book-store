@@ -31,7 +31,7 @@ const updateQuantity = (bookId, quantity) => {
             </router-link> 
           </div> 
           <div class="flex items-center space-x-4"> 
-            <router-link to="/" class="text-gray-600 hover:text-gray-900">Үй</router-link>
+            <router-link to="/" class="text-gray-600 hover:text-gray-900">Басты бет</router-link>
             <router-link to="/books" class="text-gray-600 hover:text-gray-900">Каталог</router-link>
             <router-link to="/categories" class="text-gray-600 hover:text-gray-900">Санаттар</router-link> 
             <!-- Раскрывающийся список корзины -->
@@ -98,17 +98,18 @@ const updateQuantity = (bookId, quantity) => {
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <!-- О Нас -->
           <div>
-            <h3 class="text-lg font-semibold mb-4">О Нас</h3>
+            <h3 class="text-lg font-semibold mb-4"> Біз туралы</h3>
             <p class="text-gray-400"> 
-              Сапалы кітаптар мен ерекше оқу тәжірибесінің сенімді көзі.  
-            </p>  
+              Сапалы кітаптар мен ерекше оқу тәжірибесінің сенімді көзі.        
+            </p>   
           </div>   
      
           <!-- Quick Links -->
           <div>
+            
             <h3 class="text-lg font-semibold mb-4">Навигация</h3>
             <ul class="space-y-2">
-              <li><router-link to="/" class="text-gray-400 hover:text-white">Үй</router-link></li>
+              <li><router-link to="/" class="text-gray-400 hover:text-white">Басты бет</router-link></li>
               <li><router-link to="/books" class="text-gray-400 hover:text-white">Каталог</router-link></li>
               <li><router-link to="/categories" class="text-gray-400 hover:text-white">Санаттар</router-link></li>
               <li><router-link to="/about" class="text-gray-400 hover:text-white">Біз туралы</router-link></li> 

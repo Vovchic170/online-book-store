@@ -1,7 +1,7 @@
 <template>                    
   <div>                       
     <h1 class="text-3xl font-bold text-gray-900 mb-8"> 
-    Кітап санаттары </h1> 
+    Кітап санаттары </h1>  
             
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">      
           
@@ -15,19 +15,19 @@
           <div class="text-4xl">{{ category.icon }}</div> 
           <div> 
             <h3 class="text-xl font-semibold text-gray-900">{{ category.name }}</h3>
-            <p class="text-gray-600">{{ category.count }}кітаптар</p>
+            <p class="text-gray-600">{{ category.count }}Кітаптар</p>
           </div>
         </div>
       </router-link>
     </div>
 
-    <!-- Рекомендуемые категории --> 
-    <div class="mt-16">
-      <h2 class="text-2xl font-bold text-gray-900 mb-6">
-        Ұсынылатын санаттар</h2>
+    <!-- Рекомендуемые категории -->  
+    <div class="mt-16">  
+      <h2 class="text-2xl font-bold text-gray-900 mb-6"> 
+        Ұсынылатын санаттар</h2>            
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> 
         <div v-for="featured in featuredCategories" :key="featured.id" class="card overflow-hidden"> 
-          <div class="relative h-48">  
+          <div class="relative h-48">     
             <img :src="featured.image" :alt="featured.name" class="w-full h-full object-cover"> 
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div class="absolute bottom-0 left-0 p-6 text-white">
